@@ -40,7 +40,7 @@ public class PhotoFragment extends Fragment {
     File directory;
 
     private ImageView ivPhoto;
-    private ImageButton ibSavePhoto;
+    //private ImageButton ibSavePhoto;
     private Uri resultPhotoUri;
 
     @Override
@@ -56,8 +56,8 @@ public class PhotoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_photo, container, false);
 
         ivPhoto = (ImageView) view.findViewById(R.id.ivPhoto);
-        ibSavePhoto = (ImageButton) view.findViewById(R.id.ibSavePhoto);
-        ibSavePhoto.setVisibility(View.INVISIBLE);
+        //ibSavePhoto = (ImageButton) view.findViewById(R.id.ibSavePhoto);
+        //ibSavePhoto.setVisibility(View.INVISIBLE);
 
         ImageButton ibNewPhoto = (ImageButton) view.findViewById(R.id.ibNewPhoto);
         ibNewPhoto.setOnClickListener(new View.OnClickListener() {

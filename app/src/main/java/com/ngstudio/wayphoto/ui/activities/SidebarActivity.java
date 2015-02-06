@@ -88,7 +88,7 @@ public abstract class SidebarActivity extends BaseActivity implements Animation.
 
     protected void initializeContent(int resource) {
         this.content = findViewById(resource);
-        this.content.findViewById(R.id.buttonOpenMenu).setOnClickListener(new ClickListener());
+        //this.content.findViewById(R.id.buttonOpenMenu).setOnClickListener(new ClickListener());
     }
 
     public interface AnimationStateListener {

@@ -20,7 +20,7 @@
         android:layout_alignParentLeft="true"
         android:src="@drawable/ic_new_photo"/>
 
-    <ImageButton
+  <!--  <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ibSavePhoto"
@@ -35,6 +35,6 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/ibSavePhoto"
         android:layout_toEndOf="@+id/ibSavePhoto"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/ic_launcher"/> -->
 
 </RelativeLayout>

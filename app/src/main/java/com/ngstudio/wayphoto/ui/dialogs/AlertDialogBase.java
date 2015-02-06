@@ -48,7 +48,7 @@ public class AlertDialogBase extends Dialog {
 		setContentView(getLayoutInflater().inflate(R.layout.dialog_alert_base, null));
 
 		title = (TextView) findViewById(R.id.title);
-		content = (ViewGroup) findViewById(R.id.content);
+		//content = (ViewGroup) findViewById(R.id.content);
 		//buttonsBar = (ViewGroup) findViewById(R.id.buttons_bar);
 
 		dispatchUpdate(FACILITY_TITLE);

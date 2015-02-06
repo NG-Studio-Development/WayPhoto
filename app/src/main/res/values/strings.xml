@@ -16,11 +16,11 @@
     <string name="descr_image"> descr_image </string>
     <string name="ac_name_image_pager"> ac_name_image_pager </string>
 
-
     <!-- Values for testing -->
     <string name="testing_click">click</string>
     <string name="debug_name">Debug name</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_test_actionbar_to_view">TestActionbarToViewActivity</string>
+    <string name="title_activity_tab">TabActivity</string>
 
 </resources>
