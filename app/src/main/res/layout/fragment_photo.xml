@@ -1,24 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ngstudio.wayphoto.ui.fragments.PhotoFragment">
+    android:background="@color/photo_preview_bg"
+    tools:context="com.ngstudio.wayphoto.ui.fragments.PhotoFragment" >
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ivPhoto"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/start_image_photo"
-        android:layout_above="@+id/ibNewPhoto" />
+        android:layout_centerInParent="true"
+        android:src="@drawable/start_image_photo" />
 
-    <ImageButton
+    <!-- <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ibNewPhoto"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/ic_new_photo"/>
+        android:src="@drawable/ic_new_photo"/> -->
 
   <!--  <ImageButton
         android:layout_width="wrap_content"

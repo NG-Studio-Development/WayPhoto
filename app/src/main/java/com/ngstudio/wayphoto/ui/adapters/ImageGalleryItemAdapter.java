@@ -39,7 +39,7 @@ public class ImageGalleryItemAdapter extends BaseArrayAdapter<PhotoModel> {
 
         final ImageGalleryHolder holder;
         PhotoModel photo = getItem(position);
-        //Log.d("SCROLL", "Position = " + position);
+
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_gallery, parent, false);
             holder = holderInitialise(convertView);
@@ -50,8 +50,6 @@ public class ImageGalleryItemAdapter extends BaseArrayAdapter<PhotoModel> {
 
         String path = "file://"+photo.path;
         holder.tvName.setText(photo.attributes);
-        Log.d("IMAGE_ADAPTER","Path = "+photo.path);
-        //ImageLoader.getInstance().displayImage(photo.path, holder.ivIcon);
         ImageLoader.getInstance().displayImage(path, holder.ivIcon);
 
         return convertView;
@@ -61,13 +59,11 @@ public class ImageGalleryItemAdapter extends BaseArrayAdapter<PhotoModel> {
         ImageGalleryHolder holder = new ImageGalleryHolder();
         holder.ivIcon = (ImageView) view.findViewById(R.id.ivIcon);
         holder.tvName = (TextView) view.findViewById(R.id.tvName);
-        //holder.view = view.findViewById(R.id.chatDivider);
         return holder;
     }
 
     static class ImageGalleryHolder {
         ImageView ivIcon;
         TextView tvName;
-        //View view;
     }
 }

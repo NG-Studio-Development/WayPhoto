@@ -21,11 +21,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TabHost;
 import android.widget.Toast;
 
 import com.ngstudio.wayphoto.R;
 import com.ngstudio.wayphoto.model.PlacePhotoModel;
+import com.ngstudio.wayphoto.ui.activities.MainActivity;
 import com.ngstudio.wayphoto.utils.DBUtil;
+import com.ngstudio.wayphoto.utils.ManageLocation;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -33,40 +36,65 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class PhotoFragment extends Fragment {
+public class PhotoFragment extends BaseFragment<MainActivity> {
 
     final int REQUEST_CODE_PHOTO = 1;
     final String DIRECTORY_NAME = "FinalWayPhoto";
     File directory;
 
     private ImageView ivPhoto;
-    //private ImageButton ibSavePhoto;
     private Uri resultPhotoUri;
+    private View photoTabView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         createDirectory();
+        /*getHostActivity().getFragmentTabHost().setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String s) {
+                Log.d("PHOTO_TAB_IN_FRAGMENT","s = "+s);
+            }
+        });*/
+    }
+
+    @Override
+    public int getLayoutResID() {
+        return R.layout.fragment_photo;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_photo, container, false);
-
+        View view = inflater.inflate(getLayoutResID(), container, false);
         ivPhoto = (ImageView) view.findViewById(R.id.ivPhoto);
-        //ibSavePhoto = (ImageButton) view.findViewById(R.id.ibSavePhoto);
-        //ibSavePhoto.setVisibility(View.INVISIBLE);
 
-        ImageButton ibNewPhoto = (ImageButton) view.findViewById(R.id.ibNewPhoto);
-        ibNewPhoto.setOnClickListener(new View.OnClickListener() {
+        //Log.d("PHOTO_TAB_IN_FRAGMENT","Tag = "+getHostActivity().getFragmentTabHost().getTag());
+        photoTabView = getHostActivity().getFragmentTabHost().getCurrentTabView();
+        photoTabView.findViewById(R.id.tabsLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("PHOTO_TAB_IN_FRAGMENT", "TabView");
                 createPhoto();
             }
         });
+
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("PHOTO_TAB_IN_FRAGMENT", "onResume");
+        photoTabView.findViewById(R.id.tabsLayout).setClickable(true);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d("PHOTO_TAB_IN_FRAGMENT", "onPause");
+        photoTabView.findViewById(R.id.tabsLayout).setClickable(false);
     }
 
     @Override
@@ -129,7 +157,7 @@ public class PhotoFragment extends Fragment {
     public Location getCurrentLocation () {
         Location location = null;
         if (isOnline())
-            location = BaseMapFragment.getLastKnownLocation();
+            location = ManageLocation.getInstance().getLastKnownLocation();
         return location;
     }
 

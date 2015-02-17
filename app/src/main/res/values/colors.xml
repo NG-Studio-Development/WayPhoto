@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- palette -->
-    <color name="purple_bright">#5f3b78</color>
-    <color name="purple_dark">#4c385a</color>
 
+    <color name="action_bar_bg">#5f3b78</color>
+    <color name="photo_preview_bg">#c58bb0</color>
+    <color name="tab_selected_bg">#36134e</color>
+    <color name="tab_selected_bottom_line">#a687bc</color>
+    <color name="main_tab_menu_bg_color">#4c385a</color>
+
+
+
+
+    <!-- debug values -->
+    <color name="transparent">#00000000</color>
+    <color name="transparent_red">#ff0000</color>
+    <color name="transparent_green">#00ff00</color>
+    <color name="transparent_blue">#0000ff</color>
+    <color name="transparent_black">#000000</color>
+    <color name="transparent_white">#ffffff</color>
+    <color name="transparent_purple">#551a8b</color>
 
 </resources>

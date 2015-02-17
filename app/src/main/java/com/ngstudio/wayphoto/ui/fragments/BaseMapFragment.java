@@ -105,7 +105,7 @@ public abstract class BaseMapFragment extends Fragment {
         map.moveCamera(CameraUpdateFactory.newLatLng(tmpBounds.getCenter()));
     }
 
-    public static Location getLastKnownLocation() {
+   /* public static Location getLastKnownLocation() {
 
         LocationManager mLocationManager = (LocationManager) WayPhotoApplication.getAppContext().getSystemService(Context.LOCATION_SERVICE);
         List<String> providers = mLocationManager.getProviders(true);
@@ -122,7 +122,7 @@ public abstract class BaseMapFragment extends Fragment {
             }
         }
         return bestLocation;
-    }
+    } */
 
     protected void setListMarkers (List<MarkerOptions> listMarkers) {
         for(MarkerOptions markerOptions : listMarkers)

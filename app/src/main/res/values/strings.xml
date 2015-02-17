@@ -22,5 +22,6 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_test_actionbar_to_view">TestActionbarToViewActivity</string>
     <string name="title_activity_tab">TabActivity</string>
+    <string name="title_activity_places">PlacesActivity</string>
 
 </resources>

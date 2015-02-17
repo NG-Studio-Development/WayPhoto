@@ -31,13 +31,13 @@ public class MapFragment extends BaseMapFragment {
 
     private LocationManager locationManager; // *** Refactor ***//
 
-    @Override
+    /* @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         SidebarActivity mainActivity = (SidebarActivity) activity;
         mainActivity.setAnimationStateListener(new SidebarActivity.AnimationStateListener() {
             @Override
-            public void onAnimationRepeat(Animation animation) { /* Optional */ }
+            public void onAnimationRepeat(Animation animation) {  }
 
             @Override
             public void onAnimationStart(Animation animation) { mapView.setVisibility(View.INVISIBLE); }
@@ -47,13 +47,8 @@ public class MapFragment extends BaseMapFragment {
                 mapView.setVisibility(View.VISIBLE);
             }
         });
-    }
-
-    /* @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
     } */
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
